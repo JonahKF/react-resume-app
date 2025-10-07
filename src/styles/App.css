@@ -1,0 +1,33 @@
+header {
+    display: flex;
+}
+
+h1 {
+    font: var(--h1);
+}
+
+h1 > i {
+    margin-right: 0.5rem;
+}
+
+.header-text > div {
+    font: var(--p);
+}
+
+.light-mode-toggle {
+    margin-left: auto;
+    align-self: center;
+    aspect-ratio: 1/1;
+    height: 40px;
+    border-radius: 5px;
+    background: var(--gradient);
+    border: var(--border);
+    border-top: 1px solid var(--highlight);
+    font: var(--h2);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.light-mode-toggle:hover {
+    background: var(--gradient-hover);
+}
