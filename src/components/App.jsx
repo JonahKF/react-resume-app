@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "../styles/App.css";
 import GeneralInfo from "./GeneralInfo.jsx";
 import ExpInfo from "./ExpInfo.jsx";
@@ -6,6 +6,14 @@ import EduInfo from "./EduInfo.jsx";
 import ResumePreview from "./ResumePreview.jsx";
 
 function App() {
+  const [person, setPerson] = useState({
+    generalInfo: "placeholder",
+    expInfo: "placeholder",
+    eduInfo: "placeholder",
+  });
+
+  const saveData = () => {};
+
   return (
     <>
       <header>
@@ -26,13 +34,13 @@ function App() {
 
       <main>
         <section className="form-panel">
-          <GeneralInfo />
-          <ExpInfo />
-          <EduInfo />
+          <GeneralInfo personData={person} onSave={saveData} />
+          <ExpInfo personData={person} onSave={saveData} />
+          <EduInfo personData={person} onSave={saveData} />
         </section>
 
         <aside className="preview-panel">
-          <ResumePreview />
+          <ResumePreview personData={person} />
         </aside>
       </main>
     </>
