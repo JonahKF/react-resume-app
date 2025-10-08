@@ -31,3 +31,18 @@ h1 > i {
 .light-mode-toggle:hover {
     background: var(--gradient-hover);
 }
+
+main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    padding: 2rem 0 0 0;
+    box-sizing: border-box;
+}
+
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 320px;
+}

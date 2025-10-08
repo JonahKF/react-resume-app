@@ -3,7 +3,7 @@ import "../styles/GeneralInfo.css";
 
 function GeneralInfo() {
   return (
-    <div className="card">
+    <div className="form-card">
       <h2>General Information</h2>
     </div>
   );

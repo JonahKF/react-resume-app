@@ -1,6 +1,9 @@
 // import { useState } from "react";
 import "../styles/App.css";
 import GeneralInfo from "./GeneralInfo.jsx";
+import ExpInfo from "./ExpInfo.jsx";
+import EduInfo from "./EduInfo.jsx";
+import ResumePreview from "./ResumePreview.jsx";
 
 function App() {
   return (
@@ -15,17 +18,22 @@ function App() {
             Resume tool built for The Odin Project
           </div>
         </div>
+
         <button className="light-mode-toggle">
           <i className="fa-solid fa-sun"></i>
         </button>
       </header>
 
       <main>
-        <div className="left-pane">
+        <section className="form-panel">
           <GeneralInfo />
-          {/* Components for General Info, Edu Experience, Practical Experience */}
-        </div>
-        <div className="right-pane">{/* Component for Resume Preview */}</div>
+          <ExpInfo />
+          <EduInfo />
+        </section>
+
+        <aside className="preview-panel">
+          <ResumePreview />
+        </aside>
       </main>
     </>
   );

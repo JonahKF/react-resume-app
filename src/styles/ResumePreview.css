@@ -1,0 +1,14 @@
+.a4-container {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ccc;
+    width: 43rem;
+    max-width: 100%;
+    aspect-ratio: 210 / 297;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #999;
+}
