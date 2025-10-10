@@ -21,7 +21,7 @@ h1 > i {
     height: 40px;
     border-radius: 5px;
     background: var(--gradient);
-    border: var(--border);
+    border: var(--border-card);
     border-top: 1px solid var(--highlight);
     font: var(--h2);
     box-shadow: var(--shadow);
@@ -45,4 +45,22 @@ main {
     flex-direction: column;
     gap: 1.5rem;
     min-width: 320px;
+}
+
+.form-card {
+    border-radius: 5px;
+    background: var(--gradient);
+    border: var(--border-card);
+    border-top: 1px solid var(--highlight);
+    box-shadow: var(--shadow);
+
+    padding: 1rem;
+}
+
+.form-card:hover {
+    background: var(--gradient-hover);
+}
+
+h2 {
+    font: var(--h2);
 }

@@ -12,7 +12,9 @@ function App() {
     eduInfo: "placeholder",
   });
 
-  const saveData = () => {};
+  const saveData = () => {
+    setPerson();
+  };
 
   return (
     <>
