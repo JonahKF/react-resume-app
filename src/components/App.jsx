@@ -13,7 +13,7 @@ function App() {
       jobTitle: "Tech Lead",
       email: "example@email.com",
       phone: "123-456-7890",
-      location: "New York, NY",
+      location: "White Plains, NY",
       summary:
         "Full Stack Developer with over 10 years experience in JavaScript, React, Vite, SQL and node.js.",
     },
@@ -21,8 +21,8 @@ function App() {
     eduInfo: "placeholder",
   });
 
-  const saveData = () => {
-    setPerson();
+  const setGeneralInfo = (generalInfo) => {
+    setPerson(() => ({}));
   };
 
   return (
@@ -45,9 +45,9 @@ function App() {
 
       <main>
         <section className="form-panel">
-          <GeneralInfo personData={person} onSave={saveData} />
-          <ExpInfo personData={person} onSave={saveData} />
-          <EduInfo personData={person} onSave={saveData} />
+          <GeneralInfo personData={person.generalInfo} />
+          <ExpInfo personData={person.expInfo} />
+          <EduInfo personData={person.eduInfo} />
         </section>
 
         <aside className="preview-panel">
