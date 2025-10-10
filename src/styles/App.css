@@ -12,6 +12,7 @@ h1 > i {
 
 .header-text > div {
     font: var(--p);
+    color: var(--text-muted);
 }
 
 .light-mode-toggle {

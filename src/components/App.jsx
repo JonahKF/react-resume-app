@@ -7,7 +7,16 @@ import ResumePreview from "./ResumePreview.jsx";
 
 function App() {
   const [person, setPerson] = useState({
-    generalInfo: "placeholder",
+    generalInfo: {
+      firstName: "Jane",
+      lastName: "Doe",
+      jobTitle: "Tech Lead",
+      email: "example@email.com",
+      phone: "123-456-7890",
+      location: "New York, NY",
+      summary:
+        "Full Stack Developer with over 10 years experience in JavaScript, React, Vite, SQL and node.js.",
+    },
     expInfo: "placeholder",
     eduInfo: "placeholder",
   });
