@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/GeneralInfo.css";
 
-function GeneralInfo({ personData }) {
+function GeneralInfo({ personData, onSave }) {
   const [firstName, setFirstName] = useState(personData.firstName);
   const [lastName, setLastName] = useState(personData.lastName);
   const [jobTitle, setJobTitle] = useState(personData.jobTitle);
@@ -11,7 +11,19 @@ function GeneralInfo({ personData }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // Send all onChange variables to App, call setPerson
+
+    const updatedInfo = {
+      firstName,
+      lastName,
+      jobTitle,
+      email,
+      phone,
+      location,
+    };
+
+    console.log(updatedInfo);
+
+    onSave(updatedInfo);
   };
 
   return (

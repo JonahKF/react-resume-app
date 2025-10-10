@@ -21,8 +21,11 @@ function App() {
     eduInfo: "placeholder",
   });
 
-  const setGeneralInfo = (generalInfo) => {
-    setPerson(() => ({}));
+  const handleGeneralInfoSave = (updatedGeneralInfo) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      generalInfo: updatedGeneralInfo,
+    }));
   };
 
   return (
@@ -45,7 +48,10 @@ function App() {
 
       <main>
         <section className="form-panel">
-          <GeneralInfo personData={person.generalInfo} />
+          <GeneralInfo
+            personData={person.generalInfo}
+            onSave={handleGeneralInfoSave}
+          />
           <ExpInfo personData={person.expInfo} />
           <EduInfo personData={person.eduInfo} />
         </section>

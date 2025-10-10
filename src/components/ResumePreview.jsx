@@ -1,10 +1,12 @@
 // import { useState } from "react";
 import "../styles/ResumePreview.css";
 
-function ResumePreview() {
+function ResumePreview({ personData }) {
   return (
     <div className="a4-container">
-      <h2>Placeholder</h2>
+      <h2>
+        {personData.generalInfo.firstName} {personData.generalInfo.lastName}
+      </h2>
     </div>
   );
 }

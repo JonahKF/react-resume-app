@@ -5,10 +5,19 @@
     width: 43rem;
     max-width: 100%;
     aspect-ratio: 210 / 297;
+    padding: 1rem;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
     align-items: center;
-    font-size: 2rem;
-    color: #999;
+    > * {
+        color: black;
+        font-family: serif;
+        font-size: 12pt;
+    }
+
+    > h2 {
+        font-size: 30pt;
+    }
 }
