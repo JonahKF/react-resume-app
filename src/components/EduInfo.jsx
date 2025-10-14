@@ -1,12 +1,8 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "../styles/EduInfo.css";
 
-function EduInfo() {
-  return (
-    <div className="form-card">
-      <h2>Education</h2>
-    </div>
-  );
+function EduInfo({ educationData, onSave }) {
+  return <div className="inner-container"></div>;
 }
 
 export default EduInfo;

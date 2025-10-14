@@ -1,10 +1,15 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "../styles/ExpInfo.css";
 
-function ExpInfo() {
+function ExpInfo({ experienceData, onSave }) {
   return (
-    <div className="form-card">
-      <h2>Work Experience</h2>
+    <div className="inner-container">
+      <div className="inner-header">
+        <h3>{experienceData.company}</h3>
+        <button>
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
     </div>
   );
 }

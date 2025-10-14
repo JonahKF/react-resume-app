@@ -58,6 +58,20 @@ main {
     padding: 1rem;
 }
 
+.inner-container {
+    margin: 0.75rem 0 0 0;
+    > .inner-header {
+        display: flex;
+        align-items: center;
+        > button {
+            margin-left: auto;
+            /*aspect-ratio: 1/1;*/
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
 /*.form-card:hover {
     background: var(--gradient-hover);
 }*/

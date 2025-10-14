@@ -17,14 +17,46 @@ function App() {
       summary:
         "Full Stack Developer with over 10 years experience in JavaScript, React, Vite, SQL and node.js.",
     },
-    expInfo: "placeholder",
-    eduInfo: "placeholder",
+    expInfo: [
+      {
+        id: crypto.randomUUID(),
+        company: "Company Inc.",
+        position: "Junior Developer",
+        startDate: "2018-10-01",
+        endDate: "Present",
+        description:
+          "Developed and maintained web applications using React and Node.js.",
+      },
+    ],
+    eduInfo: [
+      {
+        id: crypto.randomUUID(),
+        university: "State University",
+        degree: "B.S. in Computer Science",
+        startDate: "2014-09-01",
+        endDate: "2018-09-30",
+      },
+    ],
   });
 
   const handleGeneralInfoSave = (updatedGeneralInfo) => {
     setPerson((prevPerson) => ({
       ...prevPerson,
       generalInfo: updatedGeneralInfo,
+    }));
+  };
+
+  const handleExpInfoSave = (updatedExpInfo) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      expInfo: updatedExpInfo,
+    }));
+  };
+
+  const handleEduInfoSave = (updatedEduInfo) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      eduInfo: updatedEduInfo,
     }));
   };
 
@@ -52,8 +84,30 @@ function App() {
             personData={person.generalInfo}
             onSave={handleGeneralInfoSave}
           />
-          <ExpInfo personData={person.expInfo} />
-          <EduInfo personData={person.eduInfo} />
+
+          <div className="form-card">
+            <h2>Work Experience</h2>
+            {person.expInfo.map((experience) => (
+              <ExpInfo
+                key={experience.id}
+                experienceData={experience}
+                onSave={handleExpInfoSave}
+              />
+            ))}
+            {/* Save Button */}
+          </div>
+
+          <div className="form-card">
+            <h2>Education</h2>
+            {person.eduInfo.map((education) => (
+              <EduInfo
+                key={education.id}
+                educationData={education}
+                onSave={handleEduInfoSave}
+              />
+            ))}
+            {/* Save Button */}
+          </div>
         </section>
 
         <aside className="preview-panel">
