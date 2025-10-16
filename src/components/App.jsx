@@ -27,6 +27,15 @@ function App() {
         description:
           "Developed and maintained web applications using React and Node.js.",
       },
+      {
+        id: crypto.randomUUID(),
+        company: "Test Inc.",
+        position: "Junior Developer",
+        startDate: "2014-10-01",
+        endDate: "2018-09-30",
+        description:
+          "Developed and maintained web applications using React and Node.js.",
+      },
     ],
     eduInfo: [
       {
@@ -80,10 +89,13 @@ function App() {
 
       <main>
         <section className="form-panel">
-          <GeneralInfo
-            personData={person.generalInfo}
-            onSave={handleGeneralInfoSave}
-          />
+          <div className="form-card">
+            <h2>General Information</h2>
+            <GeneralInfo
+              personData={person.generalInfo}
+              onSave={handleGeneralInfoSave}
+            />
+          </div>
 
           <div className="form-card">
             <h2>Work Experience</h2>
@@ -94,7 +106,7 @@ function App() {
                 onSave={handleExpInfoSave}
               />
             ))}
-            {/* Save Button */}
+            {/* Add new exp btn */}
           </div>
 
           <div className="form-card">
@@ -106,7 +118,7 @@ function App() {
                 onSave={handleEduInfoSave}
               />
             ))}
-            {/* Save Button */}
+            {/* Add new edu btn */}
           </div>
         </section>
 
