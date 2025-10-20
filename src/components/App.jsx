@@ -56,10 +56,19 @@ function App() {
   };
 
   const handleExpInfoSave = (updatedExpInfo) => {
-    setPerson((prevPerson) => ({
-      ...prevPerson,
-      expInfo: updatedExpInfo,
-    }));
+    setPerson((prevPerson) => {
+      const newExpInfo = prevPerson.expInfo.map((experience) => {
+        if (experience.id === updatedExpInfo.id) {
+          return updatedExpInfo;
+        }
+        return experience;
+      });
+
+      return {
+        ...prevPerson,
+        expInfo: newExpInfo,
+      };
+    });
   };
 
   const handleEduInfoSave = (updatedEduInfo) => {
