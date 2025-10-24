@@ -29,7 +29,7 @@ function ExpInfo({ experienceData, onSave }) {
     <form className="info-form" onSubmit={onSubmit}>
       <div className="inner-header">
         <h3>{experienceData.company}</h3>
-        <button>
+        <button type="button">
           <i className="fa-solid fa-trash"></i>
         </button>
       </div>
