@@ -23,7 +23,8 @@ function App() {
         company: "Company Inc.",
         position: "Junior Developer",
         startDate: "2018-10-01",
-        endDate: "Present",
+        stillWorking: true,
+        endDate: null,
         description:
           "Developed and maintained web applications using React and Node.js.",
       },
@@ -32,6 +33,7 @@ function App() {
         company: "Test Inc.",
         position: "Junior Developer",
         startDate: "2014-10-01",
+        stillWorking: false,
         endDate: "2018-09-30",
         description:
           "Developed and maintained web applications using React and Node.js.",

@@ -5,6 +5,7 @@ function ExpInfo({ experienceData, onSave }) {
   const [company, setCompany] = useState(experienceData.company);
   const [position, setPosition] = useState(experienceData.position);
   const [startDate, setStartDate] = useState(experienceData.startDate);
+  const [stillWorking, setStillWorking] = useState(experienceData.stillWorking);
   const [endDate, setEndDate] = useState(experienceData.endDate);
   const [description, setDescription] = useState(experienceData.description);
 
@@ -16,6 +17,7 @@ function ExpInfo({ experienceData, onSave }) {
       company,
       position,
       startDate,
+      stillWorking,
       endDate,
       description,
     };
@@ -59,13 +61,25 @@ function ExpInfo({ experienceData, onSave }) {
         />
       </div>
       <div className="form-row">
-        <label htmlFor="endDate">End Date</label>
+        <label htmlFor="stillWorking">Current Employer</label>
         <input
-          id="endDate"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
+          id="stillWorking"
+          type="checkbox"
+          checked={stillWorking}
+          onChange={(e) => setStillWorking(e.target.checked)}
         />
       </div>
+      {!stillWorking ? (
+        <div className="form-row">
+          <label htmlFor="endDate">End Date</label>
+          <input
+            id="endDate"
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+        </div>
+      ) : null}
       <div className="form-row">
         <label htmlFor="description">Description</label>
         <textarea
