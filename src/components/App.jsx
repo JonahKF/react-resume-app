@@ -110,11 +110,12 @@ function App() {
 
           <div className="form-card">
             <h2>Work Experience</h2>
-            {person.expInfo.map((experience) => (
+            {person.expInfo.map((experience, index) => (
               <ExpInfo
                 key={experience.id}
                 experienceData={experience}
                 onSave={handleExpInfoSave}
+                index={index}
               />
             ))}
             {/* Add new exp btn */}
@@ -122,11 +123,12 @@ function App() {
 
           <div className="form-card">
             <h2>Education</h2>
-            {person.eduInfo.map((education) => (
+            {person.eduInfo.map((education, index) => (
               <EduInfo
                 key={education.id}
                 educationData={education}
                 onSave={handleEduInfoSave}
+                index={index}
               />
             ))}
             {/* Add new edu btn */}
