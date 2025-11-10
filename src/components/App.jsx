@@ -44,8 +44,8 @@ function App() {
         id: crypto.randomUUID(),
         university: "State University",
         degree: "B.S. in Computer Science",
-        startDate: "2014-09-01",
-        endDate: "2018-09-30",
+        startDate: "2010-09-01",
+        endDate: "2014-09-30",
       },
     ],
   });
