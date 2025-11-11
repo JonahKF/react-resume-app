@@ -8,6 +8,7 @@ function GeneralInfo({ personData, onSave }) {
   const [email, setEmail] = useState(personData.email);
   const [phone, setPhone] = useState(personData.phone);
   const [location, setLocation] = useState(personData.location);
+  const [summary, setSummary] = useState(personData.summary);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ function GeneralInfo({ personData, onSave }) {
       email,
       phone,
       location,
+      summary,
     };
 
     console.log(updatedInfo);
@@ -74,6 +76,14 @@ function GeneralInfo({ personData, onSave }) {
           id="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
+        />
+      </div>
+      <div className="form-row">
+        <label htmlFor="description">Summary</label>
+        <textarea
+          id="summary"
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
         />
       </div>
       <button className="form-btn" type="submit">

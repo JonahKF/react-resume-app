@@ -12,13 +12,41 @@
     justify-content: start;
     align-items: center;
 
-    > * {
+    * {
         color: black;
-        font-family: serif;
-        font-size: 12pt;
+        font-family: sans-serif;
+        font-size: 11pt;
+        line-height: 1.1;
     }
 
-    > h2 {
-        font-size: 30pt;
+    > .resume-header * {
+        text-align: center;
+        font-family: serif;
+    }
+
+    > .resume-header > h2 {
+        font-size: 24pt;
+    }
+
+    > .resume-header > .job-title {
+        font-size: 18pt;
+        font-weight: 600;
+        color: #434343;
+    }
+
+    > .resume-header > .contact-info {
+        font-family: sans-serif;
+        line-height: 1.5;
+    }
+
+    > .resume-body {
+        margin-top: 20px;
+        width: 85%;
+
+        h3 {
+            text-align: center;
+            font-size: 13pt;
+            border-bottom: 1px solid black;
+        }
     }
 }

@@ -17,6 +17,9 @@ function App() {
       summary:
         "Full Stack Developer with over 10 years experience in JavaScript, React, Vite, SQL and node.js.",
     },
+
+    skills: ["JavaScript", "React", "Vite", "SQL", "node.js"],
+
     expInfo: [
       {
         id: crypto.randomUUID(),
@@ -39,6 +42,7 @@ function App() {
           "Developed and maintained web applications using React and Node.js.",
       },
     ],
+
     eduInfo: [
       {
         id: crypto.randomUUID(),
