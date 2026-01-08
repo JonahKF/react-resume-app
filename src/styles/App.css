@@ -97,6 +97,10 @@ h2 {
     textarea {
         margin-left: auto;
         padding-left: 0.3rem;
+        min-width: 200px;
+    }
+    > input[type="checkbox"] {
+        min-width: 17px;
     }
 }
 
