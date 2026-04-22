@@ -20,11 +20,11 @@
 
     color-scheme: light dark;
 
-    --bg-dark: oklch(0.1 0.01 74);
-    --bg: oklch(0.15 0.01 74);
+    --bg-dark: #161a1b;
+    --bg: #161a1b;
     --bg-light: oklch(0.2 0.01 74);
     --bg-extra-light: oklch(0.25 0.01 74);
-    --gradient: linear-gradient(0deg, var(--bg) 57%, var(--bg-light));
+    --gradient: linear-gradient(180deg, var(--bg) 57%, var(--bg-light));
     --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-extra-light));
     --text: oklch(0.96 0 20);
     --text-muted: oklch(0.76 0 20);
