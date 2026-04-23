@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/GeneralInfo.css";
 
 function GeneralInfo({ personData, onSave }) {
   const [firstName, setFirstName] = useState(personData.firstName);

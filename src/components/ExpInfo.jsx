@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/ExpInfo.css";
 
 function ExpInfo({ experienceData, onSave, index }) {
   const [company, setCompany] = useState(experienceData.company);

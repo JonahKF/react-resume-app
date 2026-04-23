@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import "../styles/ResumePreview.css";
+// import "../styles/ResumePreview.css";
 
 function ResumePreview({ personData }) {
   return (
@@ -24,11 +24,28 @@ function ResumePreview({ personData }) {
 
         <section className="skills">
           <h3>Skills</h3>
-          {/* Add skills */}
+          <div>PLACEHOLDER</div>
         </section>
 
         <section className="experience">
           <h3>Experience</h3>
+          {personData.expInfo.map((experience, index) => (
+            <div className="exp-preview-wrapper">
+              <h4>
+                {index}. {experience.company}
+              </h4>
+              <div className="exp-preview-position">{experience.position}</div>
+              <div className="exp-preview-dates">
+                {experience.startDate} -{" "}
+                {experience.stillWorking === true
+                  ? "Ongoing"
+                  : experience.endDate}
+              </div>
+              <div className="exp-preview-description">
+                {experience.description}
+              </div>
+            </div>
+          ))}
         </section>
 
         <section className="education">

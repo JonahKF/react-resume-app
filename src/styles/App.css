@@ -112,10 +112,7 @@ h2 {
 }
 
 /* Resume Preview */
-/*.a4-container {
-    background: var(--bg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.a4-container {
     width: 43rem;
     max-width: 100%;
     aspect-ratio: 210 / 297;
@@ -125,42 +122,19 @@ h2 {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    text-align: center;
 
-    * {
-        color: white;
-        font-family: sans-serif;
-        font-size: 11pt;
-        line-height: 1.1;
+    > h2,
+    h3 {
+        border-bottom: 1px solid white;
     }
+}
 
-    > .resume-header * {
-        text-align: center;
-        font-family: serif;
-    }
+section {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
-    > .resume-header > h2 {
-        font-size: 24pt;
-    }
-
-    > .resume-header > .job-title {
-        font-size: 18pt;
-        font-weight: 600;
-        color: grey;
-    }
-
-    > .resume-header > .contact-info {
-        font-family: sans-serif;
-        line-height: 1.5;
-    }
-
-    > .resume-body {
-        margin-top: 20px;
-        width: 85%;
-
-        h3 {
-            text-align: center;
-            font-size: 13pt;
-            border-bottom: 1px solid black;
-        }
-    }
-}*/
+.exp-preview-wrapper {
+    margin-bottom: 0.5rem;
+}

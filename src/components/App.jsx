@@ -24,7 +24,7 @@ function App() {
       {
         id: crypto.randomUUID(),
         company: "Company Inc.",
-        position: "Junior Developer",
+        position: "Full Stack Developer",
         startDate: "2018-10-01",
         stillWorking: true,
         endDate: null,

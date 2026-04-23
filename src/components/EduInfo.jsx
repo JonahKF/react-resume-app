@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/EduInfo.css";
 
 function EduInfo({ educationData, onSave, index }) {
   const [university, setUniversity] = useState(educationData.university);
