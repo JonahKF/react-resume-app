@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function EduInfo({ educationData, onSave, index }) {
+function EduInfo({ educationData, onSave, onRemove, index }) {
   const [university, setUniversity] = useState(educationData.university);
   const [degree, setDegree] = useState(educationData.degree);
   const [startDate, setStartDate] = useState(educationData.startDate);
@@ -31,7 +31,7 @@ function EduInfo({ educationData, onSave, index }) {
       <form className="info-form" onSubmit={onSubmit}>
         <div className="inner-header">
           <h3>{educationData.university}</h3>
-          <button type="button">
+          <button type="button" onClick={() => onRemove(educationData.id)}>
             <i className="fa-solid fa-trash"></i>
           </button>
         </div>
