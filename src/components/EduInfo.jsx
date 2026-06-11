@@ -5,6 +5,7 @@ function EduInfo({ educationData, onSave, index }) {
   const [degree, setDegree] = useState(educationData.degree);
   const [startDate, setStartDate] = useState(educationData.startDate);
   const [endDate, setEndDate] = useState(educationData.endDate);
+  const [description, setDescription] = useState(educationData.description);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ function EduInfo({ educationData, onSave, index }) {
       degree,
       startDate,
       endDate,
+      description,
     };
 
     console.log(updatedInfo);
@@ -24,7 +26,7 @@ function EduInfo({ educationData, onSave, index }) {
 
   return (
     <>
-      {index != 0 ? <hr className="form-break" /> : null}
+      {/* {index != 0 ? <hr className="form-break" /> : null}*/}
 
       <form className="info-form" onSubmit={onSubmit}>
         <div className="inner-header">
@@ -67,11 +69,21 @@ function EduInfo({ educationData, onSave, index }) {
             onChange={(e) => setEndDate(e.target.value)}
           />
         </div>
+        <div className="form-row">
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
         <button className="form-btn" type="submit">
           <i className="fa-solid fa-floppy-disk"></i>
           <span>Save</span>
         </button>
       </form>
+
+      <hr className="form-break" />
     </>
   );
 }

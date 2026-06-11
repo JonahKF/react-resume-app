@@ -18,8 +18,6 @@ function App() {
         "Full Stack Developer with over 10 years experience in JavaScript, React, Vite, SQL and node.js.",
     },
 
-    skills: ["JavaScript", "React", "Vite", "SQL", "node.js"],
-
     expInfo: [
       {
         id: crypto.randomUUID(),
@@ -50,8 +48,11 @@ function App() {
         degree: "B.S. in Computer Science",
         startDate: "2010-09-01",
         endDate: "2014-09-30",
+        description: "Graduated with Honors",
       },
     ],
+
+    skills: ["JavaScript", "React", "Vite", "SQL", "node.js"],
   });
 
   const handleGeneralInfoSave = (updatedGeneralInfo) => {
@@ -78,11 +79,76 @@ function App() {
   };
 
   const handleEduInfoSave = (updatedEduInfo) => {
+    setPerson((prevPerson) => {
+      const newEduInfo = prevPerson.eduInfo.map((education) => {
+        if (education.id === updatedEduInfo.id) {
+          return updatedEduInfo;
+        }
+        return education;
+      });
+
+      return {
+        ...prevPerson,
+        eduInfo: newEduInfo,
+      };
+    });
+  };
+
+  const addNewExperience = () => {
     setPerson((prevPerson) => ({
       ...prevPerson,
-      eduInfo: updatedEduInfo,
+      expInfo: [
+        ...prevPerson.expInfo,
+        {
+          id: crypto.randomUUID(),
+          company: "",
+          position: "",
+          startDate: "",
+          stillWorking: false,
+          endDate: "",
+          description: "",
+        },
+      ],
     }));
   };
+
+  const addNewEducation = () => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      eduInfo: [
+        ...prevPerson.eduInfo,
+        {
+          id: crypto.randomUUID(),
+          company: "",
+          position: "",
+          startDate: "",
+          stillWorking: false,
+          endDate: "",
+          description: "",
+        },
+      ],
+    }));
+  };
+
+  const addNewSkill = () => {
+    console.log("placeholder");
+  };
+
+  const removeExperience = (id) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      expInfo: prevPerson.expInfo.filter((experience) => experience.id !== id),
+    }));
+  };
+
+  const removeEducation = (id) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      eduInfo: prevPerson.eduInfo.filter((education) => education.id !== id),
+    }));
+  };
+
+  const removeSkill = () => {};
 
   return (
     <>
@@ -119,10 +185,18 @@ function App() {
                 key={experience.id}
                 experienceData={experience}
                 onSave={handleExpInfoSave}
+                onRemove={removeExperience}
                 index={index}
               />
             ))}
-            {/* Add new exp btn */}
+
+            <button
+              className="form-btn add-btn"
+              type="button"
+              onClick={addNewExperience}
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
           </div>
 
           <div className="form-card">
@@ -132,10 +206,18 @@ function App() {
                 key={education.id}
                 educationData={education}
                 onSave={handleEduInfoSave}
+                onRemove={removeEducation}
                 index={index}
               />
             ))}
-            {/* Add new edu btn */}
+
+            <button
+              className="form-btn add-btn"
+              type="button"
+              onClick={addNewEducation}
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
           </div>
         </section>
 

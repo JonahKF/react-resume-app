@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ExpInfo({ experienceData, onSave, index }) {
+function ExpInfo({ experienceData, onSave, onRemove, index }) {
   const [company, setCompany] = useState(experienceData.company);
   const [position, setPosition] = useState(experienceData.position);
   const [startDate, setStartDate] = useState(experienceData.startDate);
@@ -28,12 +28,12 @@ function ExpInfo({ experienceData, onSave, index }) {
 
   return (
     <>
-      {index != 0 ? <hr className="form-break" /> : null}
+      {/* {index != 0 ? <hr className="form-break" /> : null}*/}
 
       <form className="info-form" onSubmit={onSubmit}>
         <div className="inner-header">
           <h3>{experienceData.company}</h3>
-          <button type="button">
+          <button type="button" onClick={() => onRemove(experienceData.id)}>
             <i className="fa-solid fa-trash"></i>
           </button>
         </div>
@@ -95,6 +95,8 @@ function ExpInfo({ experienceData, onSave, index }) {
           <span>Save</span>
         </button>
       </form>
+
+      <hr className="form-break" />
     </>
   );
 }

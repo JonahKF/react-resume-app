@@ -22,17 +22,12 @@ function ResumePreview({ personData }) {
           <div className="summary-text">{personData.generalInfo.summary}</div>
         </section>
 
-        <section className="skills">
-          <h3>Skills</h3>
-          <div>PLACEHOLDER</div>
-        </section>
-
         <section className="experience">
           <h3>Experience</h3>
           {personData.expInfo.map((experience, index) => (
-            <div className="exp-preview-wrapper">
+            <div className="exp-preview-wrapper" key={experience.id}>
               <h4>
-                {index}. {experience.company}
+                <span className="hidden">{index}.</span> {experience.company}
               </h4>
               <div className="exp-preview-position">{experience.position}</div>
               <div className="exp-preview-dates">
@@ -50,6 +45,32 @@ function ResumePreview({ personData }) {
 
         <section className="education">
           <h3>Education</h3>
+          {personData.eduInfo.map((education, index) => (
+            <div className="exp-preview-wrapper" key={education.id}>
+              <h4>
+                <span className="hidden">{index}.</span> {education.university}
+              </h4>
+              <div className="exp-preview-position">{education.position}</div>
+              <div className="exp-preview-dates">
+                {education.startDate} -{" "}
+                {education.stillWorking === true
+                  ? "Ongoing"
+                  : education.endDate}
+              </div>
+              <div className="exp-preview-description">
+                {education.description}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <section className="skills">
+          <h3>Skills</h3>
+          <div className="wrapper">
+            {personData.skills.map((skill, index) => (
+              <div key={index}>{skill}</div>
+            ))}
+          </div>
         </section>
       </div>
     </div>
