@@ -53,7 +53,13 @@ function App() {
       },
     ],
 
-    skills: ["JavaScript", "React", "Vite", "SQL", "node.js"],
+    skills: [
+      { id: crypto.randomUUID(), name: "JavaScript" },
+      { id: crypto.randomUUID(), name: "React" },
+      { id: crypto.randomUUID(), name: "Vite" },
+      { id: crypto.randomUUID(), name: "SQL" },
+      { id: crypto.randomUUID(), name: "node.js" },
+    ],
   });
 
   const saveGeneralInfo = (updatedGeneralInfo) => {
@@ -96,19 +102,12 @@ function App() {
   };
 
   const saveSkill = (updatedSkillInfo) => {
-    setPerson((prevPerson) => {
-      const newSkills = prevPerson.skills.map((skill, index) => {
-        if (skill[index] === updatedSkillInfo[index]) {
-          return updatedSkillInfo;
-        }
-        return skill;
-      });
-
-      return {
-        ...prevPerson,
-        skills: newSkills,
-      };
-    });
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      skills: prevPerson.skills.map((skill) =>
+        skill.id === updatedSkillInfo.id ? updatedSkillInfo : skill,
+      ),
+    }));
   };
 
   const addNewExperience = () => {
@@ -150,7 +149,7 @@ function App() {
   const addNewSkill = () => {
     setPerson((prevPerson) => ({
       ...prevPerson,
-      skills: [...prevPerson.skills, ""],
+      skills: [...prevPerson.skills, { id: crypto.randomUUID(), name: "" }],
     }));
   };
 
@@ -168,7 +167,12 @@ function App() {
     }));
   };
 
-  const removeSkill = () => {};
+  const removeSkill = (id) => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      skills: prevPerson.skills.filter((skill) => skill.id !== id),
+    }));
+  };
 
   return (
     <>
@@ -247,7 +251,7 @@ function App() {
             <h2>Skills</h2>
             {person.skills.map((skill, index) => (
               <SkillInfo
-                key={index}
+                key={skill.id}
                 skillData={skill}
                 onSave={saveSkill}
                 onRemove={removeSkill}

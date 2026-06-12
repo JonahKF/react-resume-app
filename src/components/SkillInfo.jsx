@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 function SkillInfo({ skillData, onSave, onRemove, index }) {
-  const [skill, setSkill] = useState(skillData);
+  const [name, setName] = useState(skillData.name);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const updatedInfo = skill;
+    const updatedInfo = {
+      id: skillData.id,
+      name,
+    };
 
     console.log(updatedInfo);
 
@@ -19,8 +22,8 @@ function SkillInfo({ skillData, onSave, onRemove, index }) {
         <div className="form-row">
           <input
             id="skill"
-            value={skill}
-            onChange={(e) => setSkill(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
@@ -28,7 +31,7 @@ function SkillInfo({ skillData, onSave, onRemove, index }) {
           <i className="fa-solid fa-floppy-disk"></i>
         </button>
 
-        <button type="button" onClick={() => onRemove(skill)}>
+        <button type="button" onClick={() => onRemove(skillData.id)}>
           <i className="fa-solid fa-trash"></i>
         </button>
       </form>
