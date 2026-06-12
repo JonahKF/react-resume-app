@@ -15,6 +15,10 @@ h1,
     font-family: var(--font-mono) !important;
 }
 
+button {
+    cursor: pointer;
+}
+
 .header-text > div {
     font: var(--p);
     color: var(--text-muted);
@@ -92,6 +96,35 @@ h2 {
     flex-direction: column;
     gap: 0.4rem;
     margin-top: 0.6rem;
+    &.skills-form {
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+
+        > button {
+            margin: 0;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > i {
+                margin: 0;
+            }
+            &.form-btn {
+                margin-left: auto;
+            }
+        }
+
+        .form-row {
+            height: 25px;
+            width: 100%;
+            margin-right: auto;
+            > input {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .form-row {

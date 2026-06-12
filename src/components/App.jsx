@@ -3,6 +3,7 @@ import "../styles/App.css";
 import GeneralInfo from "./GeneralInfo.jsx";
 import ExpInfo from "./ExpInfo.jsx";
 import EduInfo from "./EduInfo.jsx";
+import SkillInfo from "./SkillInfo.jsx";
 import ResumePreview from "./ResumePreview.jsx";
 
 function App() {
@@ -94,6 +95,22 @@ function App() {
     });
   };
 
+  const saveSkill = (updatedSkillInfo) => {
+    setPerson((prevPerson) => {
+      const newSkills = prevPerson.skills.map((skill, index) => {
+        if (skill[index] === updatedSkillInfo[index]) {
+          return updatedSkillInfo;
+        }
+        return skill;
+      });
+
+      return {
+        ...prevPerson,
+        skills: newSkills,
+      };
+    });
+  };
+
   const addNewExperience = () => {
     setPerson((prevPerson) => ({
       ...prevPerson,
@@ -130,7 +147,12 @@ function App() {
     }));
   };
 
-  const addNewSkill = () => {};
+  const addNewSkill = () => {
+    setPerson((prevPerson) => ({
+      ...prevPerson,
+      skills: [...prevPerson.skills, ""],
+    }));
+  };
 
   const removeExperience = (id) => {
     setPerson((prevPerson) => ({
@@ -211,6 +233,27 @@ function App() {
               className="form-btn add-btn"
               type="button"
               onClick={addNewEducation}
+            >
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </div>
+
+          <div className="form-card">
+            <h2>Skills</h2>
+            {person.skills.map((skill, index) => (
+              <SkillInfo
+                key={index}
+                skillData={skill}
+                onSave={saveSkill}
+                onRemove={removeSkill}
+                index={index}
+              />
+            ))}
+
+            <button
+              className="form-btn add-btn"
+              type="button"
+              onClick={addNewSkill}
             >
               <i className="fa-solid fa-plus"></i>
             </button>
