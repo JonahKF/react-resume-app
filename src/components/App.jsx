@@ -178,7 +178,12 @@ function App() {
             <i className="fa-regular fa-file"></i>
             Resume Builder
           </h1>
-          <div className="intro-text">built for The Odin Project</div>
+          <div className="intro-text">
+            built for{" "}
+            <a href="https://www.theodinproject.com">
+              The Odin Project <i class="fa-solid fa-link"></i>
+            </a>
+          </div>
         </div>
 
         <button className="light-mode-toggle">

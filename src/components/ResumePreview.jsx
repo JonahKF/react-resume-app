@@ -68,7 +68,10 @@ function ResumePreview({ personData }) {
           <h3>Skills</h3>
           <div className="wrapper">
             {personData.skills.map((skill, index) => (
-              <div key={index}>{skill}</div>
+              <span key={index}>
+                {skill}{" "}
+                {index != personData.skills.length - 1 ? <span>・</span> : null}
+              </span>
             ))}
           </div>
         </section>
