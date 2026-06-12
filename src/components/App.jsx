@@ -55,14 +55,14 @@ function App() {
     skills: ["JavaScript", "React", "Vite", "SQL", "node.js"],
   });
 
-  const handleGeneralInfoSave = (updatedGeneralInfo) => {
+  const saveGeneralInfo = (updatedGeneralInfo) => {
     setPerson((prevPerson) => ({
       ...prevPerson,
       generalInfo: updatedGeneralInfo,
     }));
   };
 
-  const handleExpInfoSave = (updatedExpInfo) => {
+  const saveExperience = (updatedExpInfo) => {
     setPerson((prevPerson) => {
       const newExpInfo = prevPerson.expInfo.map((experience) => {
         if (experience.id === updatedExpInfo.id) {
@@ -78,7 +78,7 @@ function App() {
     });
   };
 
-  const handleEduInfoSave = (updatedEduInfo) => {
+  const saveEducation = (updatedEduInfo) => {
     setPerson((prevPerson) => {
       const newEduInfo = prevPerson.eduInfo.map((education) => {
         if (education.id === updatedEduInfo.id) {
@@ -130,9 +130,7 @@ function App() {
     }));
   };
 
-  const addNewSkill = () => {
-    console.log("placeholder");
-  };
+  const addNewSkill = () => {};
 
   const removeExperience = (id) => {
     setPerson((prevPerson) => ({
@@ -158,9 +156,7 @@ function App() {
             <i className="fa-regular fa-file"></i>
             Resume Builder
           </h1>
-          <div className="intro-text">
-            Resume tool built for The Odin Project
-          </div>
+          <div className="intro-text">built for The Odin Project</div>
         </div>
 
         <button className="light-mode-toggle">
@@ -174,7 +170,7 @@ function App() {
             <h2>General Information</h2>
             <GeneralInfo
               personData={person.generalInfo}
-              onSave={handleGeneralInfoSave}
+              onSave={saveGeneralInfo}
             />
           </div>
 
@@ -184,7 +180,7 @@ function App() {
               <ExpInfo
                 key={experience.id}
                 experienceData={experience}
-                onSave={handleExpInfoSave}
+                onSave={saveExperience}
                 onRemove={removeExperience}
                 index={index}
               />
@@ -205,7 +201,7 @@ function App() {
               <EduInfo
                 key={education.id}
                 educationData={education}
-                onSave={handleEduInfoSave}
+                onSave={saveEducation}
                 onRemove={removeEducation}
                 index={index}
               />
