@@ -163,6 +163,12 @@ h2 {
 }
 
 /* Resume Preview */
+.preview-panel {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+}
+
 .a4-container {
     width: 43rem;
     max-width: 100%;
