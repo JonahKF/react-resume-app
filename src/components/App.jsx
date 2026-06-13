@@ -180,23 +180,27 @@ function App() {
         <div id="stripe-pattern"></div>
       </div>
 
-      <header>
-        <div className="header-text">
-          <h1>
-            <i className="fa-regular fa-file"></i>
-            Resume Builder
-          </h1>
-          <div className="intro-text">
-            built for{" "}
-            <a href="https://www.theodinproject.com">
-              The Odin Project <i class="fa-solid fa-link"></i>
-            </a>
-          </div>
-        </div>
+      <div id="overscroll-catch"></div>
 
-        <button className="light-mode-toggle">
-          <i className="fa-solid fa-sun"></i>
-        </button>
+      <header>
+        <div className="header-inner">
+          <div className="header-text">
+            <h1>
+              <i className="fa-regular fa-file"></i>
+              Resume Builder
+            </h1>
+            <div className="intro-text">
+              built for{" "}
+              <a href="https://www.theodinproject.com">
+                The Odin Project <i class="fa-solid fa-link"></i>
+              </a>
+            </div>
+          </div>
+
+          <button className="light-mode-toggle">
+            <i className="fa-solid fa-sun"></i>
+          </button>
+        </div>
       </header>
 
       <main>

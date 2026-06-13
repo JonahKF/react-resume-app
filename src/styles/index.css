@@ -64,9 +64,15 @@
 }
 
 body {
+    /*margin: 1rem auto;*/
+    /*max-width: min(90vw, 1200px);*/
+    background: var(--bg-dark);
+    /*color: var(--text-muted);*/
+}
+
+main {
     margin: 1rem auto;
     max-width: min(90vw, 1200px);
-    background: var(--bg-dark);
     color: var(--text-muted);
 }
 
