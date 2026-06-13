@@ -176,6 +176,10 @@ function App() {
 
   return (
     <>
+      <div id="stripe-container">
+        <div id="stripe-pattern"></div>
+      </div>
+
       <header>
         <div className="header-text">
           <h1>
