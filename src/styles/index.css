@@ -58,12 +58,21 @@
     --h4: 700 1rem / 1.6em var(--ff);
     --p: 400 1rem / 1.6em var(--ff);
     --small: 400 0.75rem / 1.8em var(--ff);
+
+    --primary-stripe-rgb: 22 26 27;
+    --secondary-stripe-rgb: 32 36 37;
 }
 
 body {
+    /*margin: 1rem auto;*/
+    /*max-width: min(90vw, 1200px);*/
+    background: var(--bg-dark);
+    /*color: var(--text-muted);*/
+}
+
+main {
     margin: 1rem auto;
     max-width: min(90vw, 1200px);
-    background: var(--bg-dark);
     color: var(--text-muted);
 }
 
