@@ -1,9 +1,21 @@
-// import { useState } from "react";
-// import "../styles/ResumePreview.css";
+import { useState } from "react";
 
 function ResumePreview({ personData }) {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <div className="a4-container">
+    <div
+      className="a4-container"
+      style={{ colorScheme: darkMode ? "dark" : "light" }}
+    >
+      <button
+        className="color-toggle"
+        type="button"
+        onClick={() => setDarkMode((prev) => !prev)}
+      >
+        <i className={`fa-regular ${darkMode ? "fa-sun" : "fa-moon"}`}></i>
+      </button>
+
       <div className="resume-header">
         <h2>
           {personData.generalInfo.firstName} {personData.generalInfo.lastName}

@@ -5,7 +5,7 @@ header {
     align-items: center;
     background-color: #161a1b;
 
-    border-bottom: 1px solid rgba(58, 58, 58, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     z-index: 1;
 }
@@ -200,12 +200,14 @@ h2 {
 }
 
 .a4-container {
+    /*color-scheme: light;*/
+
     width: 43rem;
     max-width: 100%;
     aspect-ratio: 210 / 297;
     padding: 1rem;
 
-    border: 1px solid #161a1b;
+    border: 1px solid light-dark(#fff, rgba(255, 255, 255, 0.2));
 
     display: flex;
     flex-direction: column;
@@ -215,8 +217,8 @@ h2 {
 
     font-family: "Calibri, sans-serif";
     font-size: 11pt;
-    color: #000;
-    background: #fff;
+    color: light-dark(#000, #fff);
+    background: light-dark(#fff, #161a1b);
     padding: 2.54cm;
     line-height: 1.15;
 
@@ -226,7 +228,7 @@ h2 {
 
     > h2,
     h3 {
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid light-dark(#000, #fff);
     }
 
     section {
@@ -244,6 +246,21 @@ h2 {
                 top: 1px;
             }
         }
+    }
+}
+
+.color-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 1.3rem;
     }
 }
 
